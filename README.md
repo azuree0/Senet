@@ -9,20 +9,20 @@ Senet means passing in ancient Egyptian, referring to the soul's passage through
 ### Evolution
 
 The game evolved significantly over time:
-- **Early Period**: Started as a simple pastime and recreational activity
-- **Later Period**: Gained profound religious significance, becoming a symbolic representation of the afterlife journey
-- The transformation from game to ritual object demonstrates how deeply embedded Senet became in Egyptian funerary practices
+- **Early Period**: Started as a simple pastime and recreational activity.
+- **Later Period**: Gained profound religious significance, becoming a symbolic representation of the afterlife journey.
+- The transformation from game to ritual object demonstrates how deeply embedded Senet became in Egyptian funerary practices.
 
 ### Symbolic Elements
 
 The game's design mirrors the journey through the afterlife:
 
-- **The 30 Squares**: Represent stages and challenges the soul must face in the underworld
-- **Moving Forward**: Each move forward symbolizes the soul's progress through the underworld, overcoming obstacles and trials
+- **The 30 Squares**: Represent stages and challenges the soul must face in the underworld.
+- **Moving Forward**: Each move forward symbolizes the soul's progress through the underworld, overcoming obstacles and trials.
 - **Special Squares**: 
-  - The **"House of Water"** (square 27) represents dangerous waters that can send the soul back
-  - The **"House of Happiness"** (square 26) and other special squares mirror safe havens and significant milestones on the journey
-  - These squares reflect the trials and rewards described in Egyptian funerary texts
+  - The **"House of Water"** (square 27) represents dangerous waters that can send the soul back.
+  - The **"House of Happiness"** (square 26) and other special squares mirror safe havens and significant milestones on the journey.
+  - These squares reflect the trials and rewards described in Egyptian funerary texts.
 
 ### Funerary Context
 
@@ -40,9 +40,9 @@ This dual nature—as both a game and a spiritual practice—makes Senet unique 
 Be the first player to move all five of your pieces off the board (beyond square 30).
 
 ### Setup
-- **Light Player**: Starts with 5 pieces on squares 1-5 (left side of the board)
-- **Dark Player**: Starts with 5 pieces on squares 6-10 (right side of the board)
-- **Starting Player**: Light player goes first
+- **Light Player**: Starts with 5 pieces on squares 1-5 (left side of the board).
+- **Dark Player**: Starts with 5 pieces on squares 6-10 (right side of the board).
+- **Starting Player**: Light player goes first.
 - **Board Layout**: 30 squares arranged in three rows:
   - Row 1: Squares 1-10 (left to right)
   - Row 2: Squares 11-20 (right to left, reversed)
@@ -50,67 +50,67 @@ Be the first player to move all five of your pieces off the board (beyond square
 
 ### Turn Sequence
 
-1. **Roll the Dice**: Click "Roll Dice" to get a value from 1-4 (simulating ancient throwing sticks)
-2. **Select a Piece**: After rolling, valid pieces will be highlighted in green
-3. **Make a Move**: Click on one of your highlighted pieces to move it forward by the dice value
-4. **End Turn**: After moving, the turn automatically passes to your opponent
+1. **Roll the Dice**: Click "Roll Dice" to get a value from 1-4 (simulating ancient throwing sticks).
+2. **Select a Piece**: After rolling, valid pieces will be highlighted in green.
+3. **Make a Move**: Click on one of your highlighted pieces to move it forward by the dice value.
+4. **End Turn**: After moving, the turn automatically passes to your opponent.
 
 ### Movement Rules
 
-- **Forward Movement Only**: Pieces always move forward (toward square 30)
-- **Exact Roll to Exit**: To move a piece off the board, you must roll the exact number needed to reach or exceed square 30
-- **Blocking**: You cannot land on a square occupied by your own piece
-- **No Valid Moves**: If you roll but have no valid moves, your turn automatically passes after 1 second
-- **Must Move**: If you have a valid move, you must make it (you cannot pass voluntarily)
+- **Forward Movement Only**: Pieces always move forward (toward square 30).
+- **Exact Roll to Exit**: To move a piece off the board, you must roll the exact number needed to reach or exceed square 30.
+- **Blocking**: You cannot land on a square occupied by your own piece.
+- **No Valid Moves**: If you roll but have no valid moves, your turn automatically passes after 1 second.
+- **Must Move**: If you have a valid move, you must make it (you cannot pass voluntarily).
 
 ### Special Squares
 
 The board contains several special squares with unique properties:
 
 1. **Square 15 - Safe House** 🟢
-   - Protected square that provides safety
-   - Pieces on this square cannot be captured by opponents
+   - Protected square that provides safety.
+   - Pieces on this square cannot be captured by opponents.
 
 2. **Square 26 - House of Happiness** 🟣
-   - A safe landing square
-   - Pieces landing here are protected
+   - A safe landing square.
+   - Pieces landing here are protected.
 
 3. **Square 27 - House of Water** 💧
    - **Danger Zone**: Landing here sends your piece back to the start!
-   - The piece is returned to the first available empty square in your starting area (squares 1-10 for Light, 6-15 for Dark)
-   - **Important**: You cannot enter this square if it's already occupied
-   - Your turn ends immediately after landing here
+   - The piece is returned to the first available empty square in your starting area (squares 1-10 for Light, 6-15 for Dark).
+   - **Important**: You cannot enter this square if it's already occupied.
+   - Your turn ends immediately after landing here.
 
 4. **Square 28 - House of Three Truths** 🟠
-   - A safe landing square
-   - Provides protection for pieces
+   - A safe landing square.
+   - Provides protection for pieces.
 
 5. **Square 29 - House of Re-Atum** 🔴
-   - The final square before exiting the board
-   - From here, you need to roll exactly 1 to exit
+   - The final square before exiting the board.
+   - From here, you need to roll exactly 1 to exit.
 
 ### Capturing Opponent Pieces
 
-- **Landing on Opponent**: If you land on a square occupied by an opponent's piece, you **capture** it
-- **Capture Effect**: The opponent's piece is sent back to their starting area (first available empty square in squares 1-10 for Light, 6-15 for Dark)
-- **Your Piece Stays**: Your piece remains on the captured square
-- **Exception**: Safe houses and special squares cannot protect pieces from capture (except square 15 which is a Safe House)
+- **Landing on Opponent**: If you land on a square occupied by an opponent's piece, you **capture** it.
+- **Capture Effect**: The opponent's piece is sent back to their starting area (first available empty square in squares 1-10 for Light, 6-15 for Dark).
+- **Your Piece Stays**: Your piece remains on the captured square.
+- **Exception**: Safe houses and special squares cannot protect pieces from capture (except square 15 which is a Safe House).
 
 ### Winning the Game
 
-- **Victory Condition**: Move all five of your pieces off the board (beyond square 30)
-- **Game End**: The game ends immediately when one player has no pieces remaining on the board
-- **Winner**: The player who successfully moves all pieces off the board wins
+- **Victory Condition**: Move all five of your pieces off the board (beyond square 30).
+- **Game End**: The game ends immediately when one player has no pieces remaining on the board.
+- **Winner**: The player who successfully moves all pieces off the board wins.
 
 ### Strategy Tips
 
-1. **Control the Center**: Try to get pieces past the starting area early to avoid being sent back
-2. **Avoid House of Water**: Be careful around square 27 - it can set you back significantly
-3. **Use Safe Houses**: Square 15 provides protection, use it strategically
-4. **Block Opponents**: Position pieces to block your opponent's progress when possible
-5. **Plan Your Exits**: Save pieces near the end for when you roll the exact numbers needed to exit
-6. **Capture Strategically**: Capturing opponent pieces sends them back, but also advances your position
-7. **Manage Your Pieces**: Don't leave all pieces bunched together - spread them out for flexibility
+1. **Control the Center**: Try to get pieces past the starting area early to avoid being sent back.
+2. **Avoid House of Water**: Be careful around square 27 - it can set you back significantly.
+3. **Use Safe Houses**: Square 15 provides protection, use it strategically.
+4. **Block Opponents**: Position pieces to block your opponent's progress when possible.
+5. **Plan Your Exits**: Save pieces near the end for when you roll the exact numbers needed to exit.
+6. **Capture Strategically**: Capturing opponent pieces sends them back, but also advances your position.
+7. **Manage Your Pieces**: Don't leave all pieces bunched together - spread them out for flexibility.
 
 
 ### Prerequisites
@@ -137,7 +137,7 @@ npx serve
 php -S localhost:8000
 ```
 
-3. Open `http://localhost:8000` in your browser
+3. Open `http://localhost:8000` in your browser.
 
 ## Project Structure
 
