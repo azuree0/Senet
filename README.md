@@ -1,3 +1,5 @@
+<img width="1691" height="939" alt="Screenshot 2025-12-10 031351" src="https://github.com/user-attachments/assets/bc1ad653-f39f-4ff3-b013-01423a5d403c" />
+
 # Senet - Ancient Egyptian Board Game
 
 One of the oldest known board games, dating back to ancient Egypt (around 3100 BCE). The game was played on a board of 30 squares arranged in three rows of ten. Players move pieces based on dice throws, with special rules for certain squares.
