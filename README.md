@@ -1,5 +1,31 @@
 <img width="1691" height="939" alt="Screenshot 2025-12-10 031351" src="https://github.com/user-attachments/assets/bc1ad653-f39f-4ff3-b013-01423a5d403c" />
 
+### Prerequisites
+
+- Rust (latest stable version)
+- `wasm-pack` - Install with: `cargo install wasm-pack`
+
+### Build Steps
+
+1. Build the WebAssembly module:
+```bash
+wasm-pack build --target web
+```
+
+2. Serve the files with a local web server (required for WebAssembly):
+```bash
+# Using Python
+python -m http.server 8000
+
+# Using Node.js
+npx serve
+
+# Using PHP
+php -S localhost:8000
+```
+
+3. Open `http://localhost:8000` in your browser.
+
 # Senet - Ancient Egyptian Board Game
 
 One of the oldest known board games, dating back to ancient Egypt (around 3100 BCE). The game was played on a board of 30 squares arranged in three rows of ten. Players move pieces based on dice throws, with special rules for certain squares.
@@ -112,32 +138,6 @@ The board contains several special squares with unique properties:
 6. **Capture Strategically**: Capturing opponent pieces sends them back, but also advances your position.
 7. **Manage Your Pieces**: Don't leave all pieces bunched together - spread them out for flexibility.
 
-
-### Prerequisites
-
-- Rust (latest stable version)
-- `wasm-pack` - Install with: `cargo install wasm-pack`
-
-### Build Steps
-
-1. Build the WebAssembly module:
-```bash
-wasm-pack build --target web
-```
-
-2. Serve the files with a local web server (required for WebAssembly):
-```bash
-# Using Python
-python -m http.server 8000
-
-# Using Node.js
-npx serve
-
-# Using PHP
-php -S localhost:8000
-```
-
-3. Open `http://localhost:8000` in your browser.
 
 ## Project Structure
 
