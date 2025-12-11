@@ -16,7 +16,6 @@ wasm-pack build --target web
 
 2. Serve the files with a local web server (required for WebAssembly):
 ```bash
-# Python
 python -m http.server 8000
 ```
 
