@@ -20,7 +20,7 @@ wasm-pack build --target web
 python -m http.server 8000
 ```
 
-2.1
+2.1.
 ```bash
 # Node.js
 npx serve
