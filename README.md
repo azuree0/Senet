@@ -18,16 +18,19 @@ wasm-pack build --target web
 ```bash
 # Python
 python -m http.server 8000
+```
 
 2.1
 ```bash
-# Using Node.js
+# Node.js
 npx serve
+```
 
 2.2
 ```bash
-# Using PHP
+# PHP
 php -S localhost:8000
+```
 ```
 
 3. Open browser:
