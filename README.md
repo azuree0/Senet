@@ -20,12 +20,6 @@ wasm-pack build --target web
 python -m http.server 8000
 ```
 
-2.1
-```bash
-# Node.js
-npx serve
-```
-
 3. Open browser:
 ```bash
 http://localhost:8000
