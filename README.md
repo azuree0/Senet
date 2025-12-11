@@ -28,7 +28,10 @@ npx serve
 php -S localhost:8000
 ```
 
-3. Open `http://localhost:8000` in your browser.
+3. Open browser:
+```bash
+http://localhost:8000
+```
 
 <br>
 
