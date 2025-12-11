@@ -5,7 +5,10 @@
 # Prerequisites
 
 - Rust (latest stable version)
-- `wasm-pack` - Install with: `cargo install wasm-pack`
+wasm-pack, install with: 
+```bash
+`cargo install wasm-pack`
+```
 
 ### Build Steps
 
