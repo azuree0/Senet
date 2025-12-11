@@ -26,13 +26,6 @@ python -m http.server 8000
 npx serve
 ```
 
-2.2
-```bash
-# PHP
-php -S localhost:8000
-```
-```
-
 3. Open browser:
 ```bash
 http://localhost:8000
