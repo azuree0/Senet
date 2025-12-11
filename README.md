@@ -19,9 +19,11 @@ wasm-pack build --target web
 # Using Python
 python -m http.server 8000
 
+```bash
 # Using Node.js
 npx serve
 
+```bash
 # Using PHP
 php -S localhost:8000
 ```
