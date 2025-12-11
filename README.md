@@ -1,5 +1,7 @@
 ![Senet Game Interface](S.png)
 
+<br>
+
 # Prerequisites
 
 - Rust (latest stable version)
@@ -26,6 +28,7 @@ php -S localhost:8000
 
 3. Open `http://localhost:8000` in your browser.
 
+<br>
 
 # Game Rules
 Be the first player to move all five of your pieces off the board (beyond square 30).
@@ -93,6 +96,7 @@ The board contains several special squares with unique properties:
 - **Game End**: The game ends immediately when one player has no pieces remaining on the board.
 - **Winner**: The player who successfully moves all pieces off the board wins.
 
+<br>
 
 # Senet - Ancient Egyptian Board Game
 
@@ -130,6 +134,7 @@ Senet held such importance that it was included in burial practices:
 
 This dual nature—as both a game and a spiritual practice—makes Senet unique among ancient board games, representing the intersection of play, religion, and the human quest to understand what lies beyond death.
 
+<br>
 
 # Project Structure
 
