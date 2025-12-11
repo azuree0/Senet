@@ -1,6 +1,6 @@
 ![Senet Game Interface](S.png)
 
-### Prerequisites
+# Prerequisites
 
 - Rust (latest stable version)
 - `wasm-pack` - Install with: `cargo install wasm-pack`
