@@ -128,17 +128,6 @@ The board contains several special squares with unique properties:
 - **Game End**: The game ends immediately when one player has no pieces remaining on the board.
 - **Winner**: The player who successfully moves all pieces off the board wins.
 
-### Strategy Tips
-
-1. **Control the Center**: Try to get pieces past the starting area early to avoid being sent back.
-2. **Avoid House of Water**: Be careful around square 27 - it can set you back significantly.
-3. **Use Safe Houses**: Square 15 provides protection, use it strategically.
-4. **Block Opponents**: Position pieces to block your opponent's progress when possible.
-5. **Plan Your Exits**: Save pieces near the end for when you roll the exact numbers needed to exit.
-6. **Capture Strategically**: Capturing opponent pieces sends them back, but also advances your position.
-7. **Manage Your Pieces**: Don't leave all pieces bunched together - spread them out for flexibility.
-
-
 ## Project Structure
 
 ```
