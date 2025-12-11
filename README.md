@@ -1,4 +1,4 @@
-<img width="1691" height="939" alt="Screenshot 2025-12-10 031351" src="https://github.com/user-attachments/assets/bc1ad653-f39f-4ff3-b013-01423a5d403c" />
+![Senet Game Interface](S.png)
 
 ### Prerequisites
 
@@ -26,43 +26,8 @@ php -S localhost:8000
 
 3. Open `http://localhost:8000` in your browser.
 
-# Senet - Ancient Egyptian Board Game
 
-One of the oldest known board games, dating back to ancient Egypt (around 3100 BCE). The game was played on a board of 30 squares arranged in three rows of ten. Players move pieces based on dice throws, with special rules for certain squares.
-
-Senet means passing in ancient Egyptian, referring to the soul's passage through the underworld. This name reflects the game's deeper spiritual purpose beyond mere entertainment.
-
-### Evolution
-
-The game evolved significantly over time:
-- **Early Period**: Started as a simple pastime and recreational activity.
-- **Later Period**: Gained profound religious significance, becoming a symbolic representation of the afterlife journey.
-- The transformation from game to ritual object demonstrates how deeply embedded Senet became in Egyptian funerary practices.
-
-### Symbolic Elements
-
-The game's design mirrors the journey through the afterlife:
-
-- **The 30 Squares**: Represent stages and challenges the soul must face in the underworld.
-- **Moving Forward**: Each move forward symbolizes the soul's progress through the underworld, overcoming obstacles and trials.
-- **Special Squares**: 
-  - The **"House of Water"** (square 27) represents dangerous waters that can send the soul back.
-  - The **"House of Happiness"** (square 26) and other special squares mirror safe havens and significant milestones on the journey.
-  - These squares reflect the trials and rewards described in Egyptian funerary texts.
-
-### Funerary Context
-
-Senet held such importance that it was included in burial practices:
-
-- **Tomb Placement**: Senet boards were placed in tombs, including that of **Tutankhamun**, to help the deceased navigate the afterlife.
-
-- **Tomb Paintings**: Ancient artwork, such as the paintings in **Queen Nefertari's** tomb, depict the game being played, emphasizing its critical role in funerary beliefs.
-
-- **Spiritual Tool**: The game served as both entertainment in life and a guide for the soul's journey after death.
-
-This dual nature—as both a game and a spiritual practice—makes Senet unique among ancient board games, representing the intersection of play, religion, and the human quest to understand what lies beyond death.
-
-## Game Rules
+# Game Rules
 Be the first player to move all five of your pieces off the board (beyond square 30).
 
 ### Setup
@@ -128,7 +93,45 @@ The board contains several special squares with unique properties:
 - **Game End**: The game ends immediately when one player has no pieces remaining on the board.
 - **Winner**: The player who successfully moves all pieces off the board wins.
 
-## Project Structure
+
+# Senet - Ancient Egyptian Board Game
+
+One of the oldest known board games, dating back to ancient Egypt (around 3100 BCE). The game was played on a board of 30 squares arranged in three rows of ten. Players move pieces based on dice throws, with special rules for certain squares.
+
+Senet means passing in ancient Egyptian, referring to the soul's passage through the underworld. This name reflects the game's deeper spiritual purpose beyond mere entertainment.
+
+### Evolution
+
+The game evolved significantly over time:
+- **Early Period**: Started as a simple pastime and recreational activity.
+- **Later Period**: Gained profound religious significance, becoming a symbolic representation of the afterlife journey.
+- The transformation from game to ritual object demonstrates how deeply embedded Senet became in Egyptian funerary practices.
+
+### Symbolic Elements
+
+The game's design mirrors the journey through the afterlife:
+
+- **The 30 Squares**: Represent stages and challenges the soul must face in the underworld.
+- **Moving Forward**: Each move forward symbolizes the soul's progress through the underworld, overcoming obstacles and trials.
+- **Special Squares**: 
+  - The **"House of Water"** (square 27) represents dangerous waters that can send the soul back.
+  - The **"House of Happiness"** (square 26) and other special squares mirror safe havens and significant milestones on the journey.
+  - These squares reflect the trials and rewards described in Egyptian funerary texts.
+
+### Funerary Context
+
+Senet held such importance that it was included in burial practices:
+
+- **Tomb Placement**: Senet boards were placed in tombs, including that of **Tutankhamun**, to help the deceased navigate the afterlife.
+
+- **Tomb Paintings**: Ancient artwork, such as the paintings in **Queen Nefertari's** tomb, depict the game being played, emphasizing its critical role in funerary beliefs.
+
+- **Spiritual Tool**: The game served as both entertainment in life and a guide for the soul's journey after death.
+
+This dual nature—as both a game and a spiritual practice—makes Senet unique among ancient board games, representing the intersection of play, religion, and the human quest to understand what lies beyond death.
+
+
+# Project Structure
 
 ```
 .

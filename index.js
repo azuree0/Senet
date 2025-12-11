@@ -175,7 +175,7 @@ function updateUI() {
         statusEl.textContent = `Game Over! ${winnerName} Player Wins!`;
         statusEl.style.color = '#ff6347';
     } else if (diceValue === 0) {
-        statusEl.textContent = 'Roll the dice to begin';
+        statusEl.textContent = '';
         statusEl.style.color = '#667eea';
     } else {
         statusEl.textContent = 'Select a piece to move';
