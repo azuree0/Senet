@@ -10,12 +10,12 @@ wasm-pack, install with:
 cargo install wasm-pack
 ```
 
-### Build Steps
-
-1. Build the WebAssembly module:
-```bash
-wasm-pack build --target web
-```
+- **Rust** (latest stable version)
+- **wasm-pack** - Install with:
+  ```bash
+  cargo install wasm-pack
+  ```
+- **Node.js** (v16 or higher) and **npm** - For React and Vite
 
 2. Serve the files with a local web server (required for WebAssembly):
 ```bash
@@ -135,15 +135,29 @@ This dual nature—as both a game and a spiritual practice—makes Senet unique 
 
 <br>
 
-# Project Structure
+# Structure
 
 ```
 .
-├── Cargo.toml          # Rust project configuration
+├── Cargo.toml               # Rust project configuration       (Backend)  (Config)
+├── Cargo.lock               # Rust dependency lock file        (Backend)  (Config)
+├── package.json             # Node.js dependencies and scripts (Frontend) (Config)
+├── package-lock.json        # Node.js dependency lock file     (Frontend) (Config)
+├── vite.config.js           # Vite build configuration         (Frontend) (Config)
+├── index.html               # HTML entry point                 (Frontend) (Static / 1 Markup)
+├── style.css                # Global styles                    (Frontend) (Static / 4 Styles)
 ├── src/
-│   └── lib.rs          # Main game logic
-├── index.html          # Web interface
-├── style.css           # Styling
-├── index.js            # JavaScript bindings
-└── README.md           # This file
+│   ├── lib.rs               # Rust game logic (WebAssembly)    (Backend)  (Source / 2 Library)
+│   ├── main.rs              # Rust main entry point            (Backend)  (Source / 6 Script)
+│   ├── App.jsx              # React main component             (Frontend) (Source / 5 Component)
+│   ├── App.css              # Component styles                 (Frontend) (Static / 4 Styles)
+│   ├── main.jsx             # React entry point                (Frontend) (Source / 6 Script)
+│   ├── database.js          # SQL History                      (Frontend) (Source / 3 Module)
+│   └── testWinConditions.js # Console test functions           (Frontend) (Source / 3 Module)
+├── pkg/                     # wasm-pack generated              (Backend)
+│   ├── senet.js             # WASM bindings                    (Backend)  (Source / 3 Module)
+│   ├── senet_bg.wasm        # Compiled WebAssembly             (Backend)  (Source / 2 Library)
+│   ├── senet.d.ts           # TypeScript definitions           (Backend)  (Source / 3 Module)
+│   └── package.json         # WASM package metadata            (Backend)  (Config)
+└── README.md                # This file
 ```
