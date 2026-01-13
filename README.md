@@ -143,23 +143,25 @@ This dual nature—as both a game and a spiritual practice—makes Senet unique 
 
 ```
 .
-├── Cargo.toml               # Rust project configuration
-├── Cargo.lock               # Rust dependency lock file
-├── package.json             # Node.js dependencies and scripts
-├── package-lock.json        # Node.js dependency lock file
-├── vite.config.js           # Vite build configuration
-├── index.html               # HTML entry point
-├── style.css                # Global styles
+├── Cargo.toml               # Rust project configuration       (Backend)  (Config)
+├── Cargo.lock               # Rust dependency lock file        (Backend)  (Config)
+├── package.json             # Node.js dependencies and scripts (Frontend) (Config)
+├── package-lock.json        # Node.js dependency lock file     (Frontend) (Config)
+├── vite.config.js           # Vite build configuration         (Frontend) (Config)
+├── index.html               # HTML entry point                 (Frontend) (Static / 1 Markup)
+├── style.css                # Global styles                    (Frontend) (Static / 4 Styles)
 ├── src/
-│   ├── lib.rs               # Rust game logic (WebAssembly)
-│   ├── App.jsx              # React main component
-│   ├── App.css              # Component styles
-│   ├── main.jsx             # React entry point
-│   └── database.js          # Game history database (SQL.js)
-├── pkg/                     # wasm-pack generated output
-│   ├── senet.js             # WASM bindings
-│   ├── senet_bg.wasm        # Compiled WebAssembly
-│   ├── senet.d.ts           # TypeScript definitions
-│   └── package.json         # WASM package metadata
-└── README.md                # Project documentation
+│   ├── lib.rs               # Rust game logic (WebAssembly)    (Backend)  (Source / 2 Library)
+│   ├── App.jsx              # React main component             (Frontend) (Source / 5 Component)
+│   ├── App.css              # Component styles                 (Frontend) (Static / 4 Styles)
+│   ├── main.jsx             # React entry point                (Frontend) (Source / 6 Script)
+│   └── database.js          # SQL History                      (Frontend) (Source / 3 Module)
+├── pkg/                     # wasm-pack generated              (Backend)
+│   ├── senet.js             # WASM bindings                    (Backend)  (Source / 3 Module)
+│   ├── senet_bg.wasm        # Compiled WebAssembly             (Backend)  (Source / 2 Library)
+│   ├── senet.d.ts           # TypeScript definitions           (Backend)  (Source / 3 Module)
+│   ├── senet_bg.wasm.d.ts   # WASM TypeScript definitions      (Backend)  (Source / 3 Module)
+│   ├── package.json         # WASM package metadata            (Backend)  (Config)
+│   └── README.md            # WASM package documentation       (Backend)  (Static / 2 Documentation)
+└── README.md                # This file
 ```
