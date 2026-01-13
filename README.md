@@ -4,13 +4,14 @@
 
 # Prerequisites
 
-- **Rust** (latest stable version)
+- **Node.js** (v16 or higher) - (https://nodejs.org/)
+- **Rust** (latest stable version) - (https://rustup.rs/)
+
 - **wasm-pack** - Install with:
   ```bash
   cargo install wasm-pack
   ```
-- **Node.js** (v16 or higher) and **npm** - For React and Vite
-
+  
 ### Build Steps
 
 1. **Build the WebAssembly module:**
@@ -27,7 +28,7 @@
    ```bash
    npm run dev
    ```
-   The app will be available at `http://localhost:3000` (or the port shown in the terminal)
+`http://localhost:3000` (or the port shown in the terminal)
 
 <br>
 
