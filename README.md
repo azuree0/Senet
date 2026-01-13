@@ -4,12 +4,6 @@
 
 # Prerequisites
 
-- Rust (latest stable version)
-wasm-pack, install with: 
-```bash
-cargo install wasm-pack
-```
-
 - **Rust** (latest stable version)
 - **wasm-pack** - Install with:
   ```bash
@@ -17,15 +11,23 @@ cargo install wasm-pack
   ```
 - **Node.js** (v16 or higher) and **npm** - For React and Vite
 
-2. Serve the files with a local web server (required for WebAssembly):
-```bash
-python -m http.server 8000
-```
+### Build Steps
 
-3. Open browser:
-```bash
-http://localhost:8000
-```
+1. **Build the WebAssembly module:**
+   ```bash
+   wasm-pack build --target web
+   ```
+
+2. **Install Node.js dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+   The app will be available at `http://localhost:3000` (or the port shown in the terminal)
 
 <br>
 
