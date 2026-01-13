@@ -1,4 +1,4 @@
-![Senet Game Interface](S.png)
+<img width="1769" height="906" alt="S" src="https://github.com/user-attachments/assets/58b76d9c-76f6-432d-980a-a5b363086920" />
 
 <br>
 
