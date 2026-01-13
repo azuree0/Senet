@@ -28,7 +28,7 @@
    ```bash
    npm run dev
    ```
-`http://localhost:3000` (or the port shown in the terminal)
+`http://localhost:3000` (or port shown in the terminal)
 
 <br>
 
