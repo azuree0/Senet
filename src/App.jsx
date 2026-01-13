@@ -177,7 +177,7 @@ function App() {
       <div className="game-info">
         <div className="player-info">
           <div id="current-player" className={`player-indicator ${currentPlayer === Player.Dark ? 'dark' : ''}`}>
-            <span>Current Player: </span>
+            <span>Current: </span>
             <span id="player-name">{playerName}</span>
           </div>
           <div id="dice-display">
