@@ -19,7 +19,7 @@
    wasm-pack build --target web
    ```
 
-2. **Node.js dependencies:**
+2. **Node.js:**
    ```bash
    npm install
    ```
