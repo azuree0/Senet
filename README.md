@@ -4,13 +4,15 @@
 
 # Prerequisites
 
-- **Node.js** (v16 or higher) - (https://nodejs.org/)
 - **Rust** (latest stable version) - (https://rustup.rs/)
-
 - **wasm-pack** - Install with:
   ```bash
   cargo install wasm-pack
   ```
+  
+### Build
+
+<br>
   
 ### Build
 
@@ -19,16 +21,12 @@
    wasm-pack build --target web
    ```
 
-2. **Node.js:**
+2. **Start a local web server:**
    ```bash
-   npm install
+   python -m http.server 8000
    ```
 
-3. **Development server:**
-   ```bash
-   npm run dev
-   ```
-`http://localhost:3000` (or the port shown in the terminal)
+  `http://localhost:8000` in your browser.
 
 <br>
 
@@ -144,17 +142,13 @@ This dual nature—as both a game and a spiritual practice—makes Senet unique 
 .
 ├── Cargo.toml               # Rust project configuration       (Backend)  (Config)
 ├── Cargo.lock               # Rust dependency lock file        (Backend)  (Config)
-├── package.json             # Node.js dependencies and scripts (Frontend) (Config)
-├── package-lock.json        # Node.js dependency lock file     (Frontend) (Config)
-├── vite.config.js           # Vite build configuration         (Frontend) (Config)
+├── build.bat                # Windows build script              (Build)    (Script)
+├── build.sh                 # Linux/Mac build script           (Build)    (Script)
 ├── index.html               # HTML entry point                 (Frontend) (Static / 1 Markup)
+├── index.js                 # Vanilla JavaScript game logic    (Frontend) (Source / 6 Script)
 ├── style.css                # Global styles                    (Frontend) (Static / 4 Styles)
 ├── src/
-│   ├── lib.rs               # Rust game logic (WebAssembly)    (Backend)  (Source / 2 Library)
-│   ├── App.jsx              # React main component             (Frontend) (Source / 5 Component)
-│   ├── App.css              # Component styles                 (Frontend) (Static / 4 Styles)
-│   ├── main.jsx             # React entry point                (Frontend) (Source / 6 Script)
-│   └── database.js          # SQL History                      (Frontend) (Source / 3 Module)
+│   └── lib.rs               # Rust game logic (WebAssembly)    (Backend)  (Source / 2 Library)
 ├── pkg/                     # wasm-pack generated              (Backend)
 │   ├── senet.js             # WASM bindings                    (Backend)  (Source / 3 Module)
 │   ├── senet_bg.wasm        # Compiled WebAssembly             (Backend)  (Source / 2 Library)
