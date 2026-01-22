@@ -9,8 +9,6 @@
   ```bash
   cargo install wasm-pack
   ```
-
-<br>
   
 ### Build
 
