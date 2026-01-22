@@ -1,6 +1,17 @@
 use wasm_bindgen::prelude::*;
 use serde::{Deserialize, Serialize};
 
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct SquareRenderInfo {
+    pub index: usize,
+    pub square_type: u8,
+    pub classes: String,
+    pub content: String,
+    pub hieroglyph: String,
+    pub is_valid_move: bool,
+    pub display_number: usize,
+}
+
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 #[wasm_bindgen]
@@ -333,6 +344,182 @@ impl GameState {
     
     pub fn reset(&mut self) {
         *self = GameState::new();
+    }
+    
+    pub fn get_board_layout(&self) -> JsValue {
+        // Senet board layout: 3 rows of 10 squares
+        // Row 1: squares 0-9 (left to right)
+        // Row 2: squares 10-19 (right to left, reversed)
+        // Row 3: squares 20-29 (left to right)
+        let layout: Vec<usize> = (0..10)
+            .chain((10..20).rev())
+            .chain(20..30)
+            .collect();
+        serde_wasm_bindgen::to_value(&layout).unwrap()
+    }
+    
+    pub fn get_square_render_info(&self, square_index: usize, is_valid_move: bool) -> JsValue {
+        if square_index >= 30 {
+            return serde_wasm_bindgen::to_value(&SquareRenderInfo {
+                index: square_index,
+                square_type: 0,
+                classes: String::new(),
+                content: String::new(),
+                hieroglyph: String::new(),
+                is_valid_move: false,
+                display_number: square_index + 1,
+            }).unwrap();
+        }
+        
+        let square = &self.board[square_index];
+        
+        let mut classes = String::from("square");
+        let mut content = String::new();
+        let mut hieroglyph = String::new();
+        let mut square_type = 0u8;
+        
+        // Add starting area classes
+        if square_index < 5 {
+            classes.push_str(" start-light");
+        } else if square_index < 10 {
+            classes.push_str(" start-dark");
+        }
+        
+        // Determine hieroglyph and special square classes
+        match square_index {
+            14 => {
+                hieroglyph = "𓊃".to_string();
+                classes.push_str(" safe-house");
+            }
+            25 => {
+                hieroglyph = "𓄤".to_string();
+                classes.push_str(" house-of-happiness");
+            }
+            26 => {
+                hieroglyph = "𓈗".to_string();
+                classes.push_str(" house-of-water");
+            }
+            27 => {
+                hieroglyph = "𓁹".to_string();
+                classes.push_str(" house-of-three-truths");
+            }
+            28 => {
+                hieroglyph = "𓇳".to_string();
+                classes.push_str(" house-of-re-atum");
+            }
+            _ => {}
+        }
+        
+        // Determine square type and content
+        match (square.piece, &square.square_type) {
+            (Some(Player::Light), _) => {
+                square_type = 1;
+                content = "○".to_string();
+                classes.push_str(" light-piece");
+            }
+            (Some(Player::Dark), _) => {
+                square_type = 2;
+                content = "●".to_string();
+                classes.push_str(" dark-piece");
+            }
+            (None, SquareType::SafeHouse) => {
+                square_type = 3;
+                content = hieroglyph.clone();
+            }
+            (None, SquareType::HouseOfHappiness) => {
+                square_type = 4;
+                content = hieroglyph.clone();
+            }
+            (None, SquareType::HouseOfWater) => {
+                square_type = 5;
+                content = hieroglyph.clone();
+            }
+            (None, SquareType::HouseOfThreeTruths) => {
+                square_type = 6;
+                content = hieroglyph.clone();
+            }
+            (None, SquareType::HouseOfReAtum) => {
+                square_type = 7;
+                content = hieroglyph.clone();
+            }
+            _ => {
+                square_type = 0;
+                if hieroglyph.is_empty() {
+                    classes.push_str(" empty");
+                }
+            }
+        }
+        
+        if is_valid_move {
+            classes.push_str(" valid-move");
+        }
+        
+        serde_wasm_bindgen::to_value(&SquareRenderInfo {
+            index: square_index,
+            square_type,
+            classes,
+            content,
+            hieroglyph,
+            is_valid_move,
+            display_number: square_index + 1,
+        }).unwrap()
+    }
+    
+    pub fn get_all_squares_render_info(&self) -> JsValue {
+        let layout: Vec<usize> = serde_wasm_bindgen::from_value(
+            self.get_board_layout()
+        ).unwrap_or_default();
+        
+        let valid_moves: Vec<usize> = serde_wasm_bindgen::from_value(
+            self.get_valid_moves()
+        ).unwrap_or_default();
+        
+        let squares: Vec<SquareRenderInfo> = layout.iter()
+            .map(|&idx| {
+                let is_valid = valid_moves.contains(&idx);
+                serde_wasm_bindgen::from_value(
+                    self.get_square_render_info(idx, is_valid)
+                ).unwrap()
+            })
+            .collect();
+        
+        serde_wasm_bindgen::to_value(&squares).unwrap()
+    }
+    
+    pub fn get_player_name(&self, player: Player) -> String {
+        match player {
+            Player::Light => "Light".to_string(),
+            Player::Dark => "Dark".to_string(),
+        }
+    }
+    
+    pub fn get_ui_state(&self) -> JsValue {
+        #[derive(Serialize)]
+        struct UIState {
+            current_player_name: String,
+            dice_value: u8,
+            dice_display: String,
+            roll_button_disabled: bool,
+            game_over: bool,
+            winner_name: Option<String>,
+        }
+        
+        let dice_display = if self.dice_value == 0 {
+            "-".to_string()
+        } else {
+            self.dice_value.to_string()
+        };
+        
+        let state = UIState {
+            current_player_name: self.get_player_name(self.current_player),
+            dice_value: self.dice_value,
+            dice_display,
+            roll_button_disabled: self.dice_value != 0 || self.game_over,
+            game_over: self.game_over,
+            winner_name: self.winner.map(|p| self.get_player_name(p)),
+        };
+        
+        serde_wasm_bindgen::to_value(&state).unwrap()
     }
 }
 

@@ -45,127 +45,53 @@ function renderBoard() {
     const board = document.getElementById('game-board');
     board.innerHTML = '';
     
-    const boardArray = game.get_board();
-    const validMoves = game.get_valid_moves();
+    const squares = game.get_all_squares_render_info();
     
-    // Senet board layout: 3 rows of 10 squares
-    // Row 1: squares 0-9 (left to right)
-    // Row 2: squares 10-19 (right to left)
-    // Row 3: squares 20-29 (left to right)
-    
-    const layout = [
-        ...Array.from({ length: 10 }, (_, i) => i),           // 0-9
-        ...Array.from({ length: 10 }, (_, i) => 19 - i),      // 19-10 (reversed)
-        ...Array.from({ length: 10 }, (_, i) => 20 + i),     // 20-29
-    ];
-    
-    layout.forEach((squareIndex, displayIndex) => {
+    squares.forEach((squareInfo) => {
         const square = document.createElement('div');
-        square.className = 'square';
-        square.dataset.index = squareIndex;
-        
-        const squareType = boardArray[squareIndex];
-        let content = '';
-        let specialClass = '';
-        let hieroglyph = '';
-        
-        // Add starting area classes (squares 1-5 light brown, 6-10 dark brown)
-        if (squareIndex >= 0 && squareIndex < 5) { // Squares 1-5
-            square.className += ' start-light';
-        } else if (squareIndex >= 5 && squareIndex < 10) { // Squares 6-10
-            square.className += ' start-dark';
-        }
-        
-        // Determine hieroglyph based on square index (special squares)
-        if (squareIndex === 14) { // Square 15 - Safe House
-            hieroglyph = '𓊃'; // Hieroglyph for protection/safe
-            square.className += ' safe-house';
-            specialClass = 'safe-house';
-        } else if (squareIndex === 25) { // Square 26 - House of Happiness
-            hieroglyph = '𓄤'; // Hieroglyph for good/beautiful/happiness
-            square.className += ' house-of-happiness';
-            specialClass = 'house-of-happiness';
-        } else if (squareIndex === 26) { // Square 27 - House of Water
-            hieroglyph = '𓈗'; // Hieroglyph for water
-            square.className += ' house-of-water';
-            specialClass = 'house-of-water';
-        } else if (squareIndex === 27) { // Square 28 - House of Three Truths
-            hieroglyph = '𓁹'; // Hieroglyph for truth/justice (eye of Horus)
-            square.className += ' house-of-three-truths';
-            specialClass = 'house-of-three-truths';
-        } else if (squareIndex === 28) { // Square 29 - House of Re-Atum
-            hieroglyph = '𓇳'; // Hieroglyph for sun/Re
-            square.className += ' house-of-re-atum';
-            specialClass = 'house-of-re-atum';
-        }
-        
-        switch (squareType) {
-            case 1: // LightPiece
-                content = '○';
-                square.className += ' light-piece';
-                break;
-            case 2: // DarkPiece
-                content = '●';
-                square.className += ' dark-piece';
-                break;
-            case 3: // SafeHouse (empty)
-            case 4: // HouseOfHappiness (empty)
-            case 5: // HouseOfWater (empty)
-            case 6: // HouseOfThreeTruths (empty)
-            case 7: // HouseOfReAtum (empty)
-                content = hieroglyph;
-                break;
-            default:
-                if (!hieroglyph) {
-                    square.className += ' empty';
-                }
-        }
-        
-        if (validMoves.includes(squareIndex)) {
-            square.className += ' valid-move';
-        }
+        square.className = squareInfo.classes;
+        square.dataset.index = squareInfo.index;
         
         // Add hieroglyph if present (as separate element for styling)
-        if (hieroglyph && (squareType === 1 || squareType === 2)) {
+        if (squareInfo.hieroglyph && (squareInfo.square_type === 1 || squareInfo.square_type === 2)) {
             const hieroEl = document.createElement('span');
             hieroEl.className = 'hieroglyph';
-            hieroEl.textContent = hieroglyph;
+            hieroEl.textContent = squareInfo.hieroglyph;
             square.appendChild(hieroEl);
         }
         
         // Add piece content
-        if (squareType === 1 || squareType === 2) {
+        if (squareInfo.square_type === 1 || squareInfo.square_type === 2) {
             const pieceEl = document.createElement('span');
             pieceEl.className = 'piece';
-            pieceEl.textContent = squareType === 1 ? '○' : '●';
+            pieceEl.textContent = squareInfo.square_type === 1 ? '○' : '●';
             square.appendChild(pieceEl);
         } else {
-            square.textContent = content;
+            square.textContent = squareInfo.content;
         }
         
         // Add square number
         const number = document.createElement('span');
         number.className = 'square-number';
-        number.textContent = squareIndex + 1;
+        number.textContent = squareInfo.display_number;
         square.appendChild(number);
         
-        square.addEventListener('click', () => handleSquareClick(squareIndex));
+        square.addEventListener('click', () => handleSquareClick(squareInfo.index));
         board.appendChild(square);
     });
 }
 
 function updateUI() {
-    const currentPlayer = game.current_player;
-    const playerName = currentPlayer === Player.Light ? 'Light' : 'Dark';
-    const playerNameEl = document.getElementById('player-name');
-    playerNameEl.textContent = playerName;
-    playerNameEl.className = currentPlayer === Player.Light ? '' : 'dark';
+    const uiState = game.get_ui_state();
     
-    const diceValue = game.dice_value;
-    document.getElementById('dice-value').textContent = diceValue || '-';
+    const playerNameEl = document.getElementById('player-name');
+    playerNameEl.textContent = uiState.current_player_name;
+    playerNameEl.className = game.current_player === Player.Light ? '' : 'dark';
+    
+    document.getElementById('dice-value').textContent = uiState.dice_display;
     
     const rollBtn = document.getElementById('roll-btn');
-    rollBtn.disabled = diceValue !== 0 || game.game_over;
+    rollBtn.disabled = uiState.roll_button_disabled;
 }
 
 function handleSquareClick(squareIndex) {
