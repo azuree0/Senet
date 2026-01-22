@@ -4,32 +4,33 @@
 
 # Prerequisites
 
-- **Node.js** (v16 or higher) - (https://nodejs.org/)
 - **Rust** (latest stable version) - (https://rustup.rs/)
-
 - **wasm-pack** - Install with:
   ```bash
   cargo install wasm-pack
   ```
 
+<br>
+  
+### Build
 
-### Build Steps
-
-1. **Build the WebAssembly module:**
+1. **WebAssembly module:**
    ```bash
    wasm-pack build --target web
    ```
+   Or use the provided build scripts:
+   - **Windows**: `build.bat`
+   - **Linux/Mac**: `./build.sh`
 
-2. **Install Node.js dependencies:**
+2. **Start a local web server:**
    ```bash
-   npm install
+   python -m http.server 8000
    ```
-
-3. **Start the development server:**
+   Or:
    ```bash
-   npm run dev
+   npx serve
    ```
-`http://localhost:3000` (or the port shown in the terminal)
+   Then open `http://localhost:8000` in your browser.
 
 <br>
 
@@ -143,23 +144,21 @@ This dual nature—as both a game and a spiritual practice—makes Senet unique 
 
 ```
 .
-├── Cargo.toml               # Rust project configuration
-├── Cargo.lock               # Rust dependency lock file
-├── package.json             # Node.js dependencies and scripts
-├── package-lock.json        # Node.js dependency lock file
-├── vite.config.js           # Vite build configuration
-├── index.html               # HTML entry point
-├── style.css                # Global styles
+├── Cargo.toml               # Rust project configuration       (Backend)  (Config)
+├── Cargo.lock               # Rust dependency lock file        (Backend)  (Config)
+├── build.bat                # Windows build script              (Build)    (Script)
+├── build.sh                 # Linux/Mac build script           (Build)    (Script)
+├── index.html               # HTML entry point                 (Frontend) (Static / 1 Markup)
+├── index.js                 # Vanilla JavaScript game logic    (Frontend) (Source / 6 Script)
+├── style.css                # Global styles                    (Frontend) (Static / 4 Styles)
 ├── src/
-│   ├── lib.rs               # Rust game logic (WebAssembly)
-│   ├── App.jsx              # React main component
-│   ├── App.css              # Component styles
-│   ├── main.jsx             # React entry point
-│   └── database.js          # Game history database (SQL.js)
-├── pkg/                     # wasm-pack generated output
-│   ├── senet.js             # WASM bindings
-│   ├── senet_bg.wasm        # Compiled WebAssembly
-│   ├── senet.d.ts           # TypeScript definitions
-│   └── package.json         # WASM package metadata
-└── README.md                # Project documentation
+│   └── lib.rs               # Rust game logic (WebAssembly)    (Backend)  (Source / 2 Library)
+├── pkg/                     # wasm-pack generated              (Backend)
+│   ├── senet.js             # WASM bindings                    (Backend)  (Source / 3 Module)
+│   ├── senet_bg.wasm        # Compiled WebAssembly             (Backend)  (Source / 2 Library)
+│   ├── senet.d.ts           # TypeScript definitions           (Backend)  (Source / 3 Module)
+│   ├── senet_bg.wasm.d.ts   # WASM TypeScript definitions      (Backend)  (Source / 3 Module)
+│   ├── package.json         # WASM package metadata            (Backend)  (Config)
+│   └── README.md            # WASM package documentation       (Backend)  (Static / 2 Documentation)
+└── README.md                # This file
 ```

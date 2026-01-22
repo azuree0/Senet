@@ -59,14 +59,14 @@ header h1 {
     font-weight: bold;
 }
 
-.player-indicator span:last-child {
+#player-name {
     padding: 5px 15px;
     border-radius: 5px;
     background: #667eea;
     color: white;
 }
 
-.player-indicator.dark span:last-child {
+#player-name.dark {
     background: #764ba2;
 }
 
@@ -74,21 +74,16 @@ header h1 {
     font-size: 1.2em;
 }
 
-#dice-display span:first-child {
-    color: #b19cd9;
-}
-
-#dice-display span:last-child {
+#dice-value {
     display: inline-block;
     width: 40px;
     height: 40px;
     line-height: 40px;
     text-align: center;
-    background: #9370db;
+    background: #ffd700;
     border-radius: 5px;
     font-weight: bold;
     font-size: 1.3em;
-    color: white;
 }
 
 .controls {
@@ -116,12 +111,12 @@ header h1 {
 }
 
 .btn-primary {
-    background: #ffd700;
-    color: #333;
+    background: #667eea;
+    color: white;
 }
 
 .btn-primary:hover {
-    background: #ffed4e;
+    background: #5568d3;
 }
 
 .btn-secondary {
@@ -143,7 +138,7 @@ header h1 {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     gap: 5px;
-    margin: 30px auto 10px auto;
+    margin: 30px auto;
     max-width: 800px;
     padding: 20px;
     background: linear-gradient(
@@ -340,7 +335,7 @@ header h1 {
     text-align: center;
     font-size: 1.3em;
     font-weight: bold;
-    margin: 10px 0 0 0;
+    margin: 20px 0;
     min-height: 30px;
     color: #667eea;
 }
@@ -380,4 +375,3 @@ header h1 {
         font-size: 2em;
     }
 }
-
