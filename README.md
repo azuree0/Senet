@@ -17,7 +17,7 @@
    wasm-pack build --target web
    ```
 
-2. **local web server:**
+2. **Local web server:**
    ```bash
    python -m http.server 8000
    ```
