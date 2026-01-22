@@ -1,4 +1,4 @@
-<img width="1373" height="688" alt="S" src="https://github.com/user-attachments/assets/5acc9e52-3633-4542-ae76-6bd278cd871f" />
+<img width="1744" height="905" alt="S" src="https://github.com/user-attachments/assets/b12746e5-fb64-41a4-b343-5ec77166cff6" />
 
 <br>
 
@@ -9,6 +9,8 @@
   ```bash
   cargo install wasm-pack
   ```
+  
+### Build
 
 <br>
   
@@ -18,19 +20,13 @@
    ```bash
    wasm-pack build --target web
    ```
-   Or use the provided build scripts:
-   - **Windows**: `build.bat`
-   - **Linux/Mac**: `./build.sh`
 
 2. **Start a local web server:**
    ```bash
    python -m http.server 8000
    ```
-   Or:
-   ```bash
-   npx serve
-   ```
-   Then open `http://localhost:8000` in your browser.
+
+  `http://localhost:8000` in your browser.
 
 <br>
 
@@ -152,7 +148,6 @@ This dual nature—as both a game and a spiritual practice—makes Senet unique 
 ├── index.js                 # Vanilla JavaScript game logic    (Frontend) (Source / 6 Script)
 ├── style.css                # Global styles                    (Frontend) (Static / 4 Styles)
 ├── src/
-<<<<<<< HEAD
 │   └── lib.rs               # Rust game logic (WebAssembly)    (Backend)  (Source / 2 Library)
 ├── pkg/                     # wasm-pack generated              (Backend)
 │   ├── senet.js             # WASM bindings                    (Backend)  (Source / 3 Module)
@@ -163,17 +158,3 @@ This dual nature—as both a game and a spiritual practice—makes Senet unique 
 │   └── README.md            # WASM package documentation       (Backend)  (Static / 2 Documentation)
 └── README.md                # This file
 ```
-=======
-│   ├── lib.rs               # Rust game logic (WebAssembly)
-│   ├── App.jsx              # React main component
-│   ├── App.css              # Component styles
-│   ├── main.jsx             # React entry point
-│   └── database.js          # Game history database (SQL.js)
-├── pkg/                     # wasm-pack generated output
-│   ├── senet.js             # WASM bindings
-│   ├── senet_bg.wasm        # Compiled WebAssembly
-│   ├── senet.d.ts           # TypeScript definitions
-│   └── package.json         # WASM package metadata
-└── README.md                # Project documentation
-```
->>>>>>> 4a75dfdbc467b8f9b1c044d7cf602ff2cde8bc9e
