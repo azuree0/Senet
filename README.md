@@ -32,7 +32,7 @@ Be the first player to move all five of your pieces off the board (beyond square
 ### Setup
 - **Light Player**: Starts with 5 pieces on squares 1-5 (left side of the board).
 - **Dark Player**: Starts with 5 pieces on squares 6-10 (right side of the board).
-- **Starting Player**: Light player goes first.
+- **Starting Player**: Light player go first.
 - **Board Layout**: 30 squares arranged in three rows:
   - Row 1: Squares 1-10 (left to right)
   - Row 2: Squares 11-20 (right to left, reversed)
